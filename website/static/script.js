@@ -1,45 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('dark-mode-toggle');
-
-    // Check if user has a preferred theme
-    initializeTheme();
-
-    toggle.addEventListener('change', function() {
-        if (this.checked) {
-            // Apply Dark Theme
-            applyTheme('dark');
-        } else {
-            // Apply Light Theme
-            applyTheme('light');
-        }
-    });
-});
-
-function applyTheme(theme) {
-    const body = document.body;
-
-    if (theme === 'dark') {
-        body.classList.add('dark-theme');
-        body.classList.remove('light-theme');
-    } else {
-        body.classList.add('light-theme');
-        body.classList.remove('dark-theme');
-    }
-}
-
-function initializeTheme() {
-    const toggle = document.getElementById('dark-mode-toggle');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (prefersDark) {
-        applyTheme('dark');
-        toggle.checked = true;
-    } else {
-        applyTheme('light');
-        toggle.checked = false;
-    }
-}
-
 function editNote(noteId, noteTitle, noteContent) {
     // Set the note ID
     document.getElementById('note-id').value = noteId;
@@ -50,9 +8,6 @@ function editNote(noteId, noteTitle, noteContent) {
     // Set the note content in TinyMCE
     tinymce.get('note').setContent(noteContent);
 }
-
-
-
 
 function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');

@@ -15,17 +15,6 @@
   --navbar-hover-background-dark: #444444; // Slightly lighter dark shade for hover
   --link-color-dark: #C284E3; // Soft purple for links
 
-  /* Light Theme (Day/Sky) */
-  --body-background-light: #dae8fc; // Soft sky blue for day mode background
-  --text-color-light: #1a1a1a; // Dark text for readability in day mode
-  --secondary-background-light: #f0f8ff; // Very light blue, like a clear sky
-  --foreground-color-light: #000000; // Black for foreground elements
-  --navbar-background-light: #f0f8ff; // Light sky blue for navbar
-  --navbar-text-color-light: #1a1a1a; // Dark text on light navbar
-  --navbar-hover-background-light: #e1effe; // Slightly darker blue for hover
-  --link-color-light: #1e90ff; // Vivid blue for links, simulating clear sky
-
-  --twinkle-duration: 3s;
 }
 
 
@@ -37,29 +26,14 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-
-
-  &.dark-theme {
-    --body-background: var(--body-background-dark);
-    --text-color: var(--text-color-dark);
-    --secondary-background: var(--secondary-background-dark);
-    --foreground-color: var(--foreground-color-dark);
-    --navbar-background: var(--navbar-background-dark);
-    --navbar-text-color: var(--navbar-text-color-dark);
-    --navbar-hover-background: var(--navbar-hover-background-dark);
-    --link-color: var(--link-color-dark);
-  }
-
-  &.light-theme {
-    --body-background: var(--body-background-light);
-    --text-color: var(--text-color-light);
-    --secondary-background: var(--secondary-background-light);
-    --foreground-color: var(--foreground-color-light);
-    --navbar-background: var(--navbar-background-light);
-    --navbar-text-color: var(--navbar-text-color-light);
-    --navbar-hover-background: var(--navbar-hover-background-light);
-    --link-color: var(--link-color-light);
-  }
+  --body-background: var(--body-background-dark);
+  --text-color: var(--text-color-dark);
+  --secondary-background: var(--secondary-background-dark);
+  --foreground-color: var(--foreground-color-dark);
+  --navbar-background: var(--navbar-background-dark);
+  --navbar-text-color: var(--navbar-text-color-dark);
+  --navbar-hover-background: var(--navbar-hover-background-dark);
+  --link-color: var(--link-color-dark);
 
 
   .navbar {
@@ -91,7 +65,8 @@ body {
       background: var(--navbar-hover-background);
     }
   }
-#sidebarToggle {
+
+  #sidebarToggle {
     background-color: var(--navbar-background-dark);
     color: var(--text-color-dark);
     border: none;
@@ -116,6 +91,7 @@ body {
 
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
   .content {
     margin-top: 60px;
     // Add more content styles here
@@ -131,57 +107,8 @@ body {
     // Add more styles for text elements
   }
 
-  .toggle-switch {
-    position: relative;
-    width: 60px;
-    height: 28px;
-    margin: auto;
-    background: #83d8ff; // Default to light mode background
-    border-radius: 24px;
-    transition: background-color 0.3s linear;
-
-    input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    label {
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 24px;
-      overflow: hidden; // Hide the overflow to keep rounded edges
-
-      &:before {
-        content: "☀️"; // Sun icon
-        position: absolute;
-        height: 20px;
-        width: 20px;
-        left: 4px;
-        bottom: 4px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.1);
-        transition: .4s;
-        text-align: center;
-        line-height: 20px;
-      }
-    }
-
-    input:checked + label {
-      background: #091921; // Dark mode background
-
-      &:before {
-        content: "🌑"; // Moon icon
-        transform: translateX(32px); // Move to the right
-        background-color: rgba(255, 255, 255, 0.5); // Semi-transparent white for the moon
-      }
-    }
-  }
 }
+
 
 
   .form-box {
@@ -457,7 +384,6 @@ button[type="submit"] {
 
 }
 
-
 @function random_range($min, $max) {
   $rand: random();
   $random_range: $min + floor($rand * (($max - $min) + 1));
@@ -466,7 +392,6 @@ button[type="submit"] {
 
 .snow {
   $total: 200;
-  filter: drop-shadow(0 0 10px white);
   position: absolute;
   width: 10px;
   height: 10px;

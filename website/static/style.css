@@ -14,17 +14,7 @@
   --navbar-text-color-dark: #E0E0E0;
   --navbar-hover-background-dark: #444444;
   --link-color-dark: #C284E3;
-  /* Light Theme (Day/Sky) */
-  --body-background-light: #dae8fc;
-  --text-color-light: #1a1a1a;
-  --secondary-background-light: #f0f8ff;
-  --foreground-color-light: #000000;
-  --navbar-background-light: #f0f8ff;
-  --navbar-text-color-light: #1a1a1a;
-  --navbar-hover-background-light: #e1effe;
-  --link-color-light: #1e90ff;
-  --twinkle-duration: 3s;
-}
+
 
 body {
   font-family: Arial, sans-serif;
@@ -34,8 +24,6 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-}
-body.dark-theme {
   --body-background: var(--body-background-dark);
   --text-color: var(--text-color-dark);
   --secondary-background: var(--secondary-background-dark);
@@ -45,16 +33,7 @@ body.dark-theme {
   --navbar-hover-background: var(--navbar-hover-background-dark);
   --link-color: var(--link-color-dark);
 }
-body.light-theme {
-  --body-background: var(--body-background-light);
-  --text-color: var(--text-color-light);
-  --secondary-background: var(--secondary-background-light);
-  --foreground-color: var(--foreground-color-light);
-  --navbar-background: var(--navbar-background-light);
-  --navbar-text-color: var(--navbar-text-color-light);
-  --navbar-hover-background: var(--navbar-hover-background-light);
-  --link-color: var(--link-color-light);
-}
+
 body .navbar {
   background: var(--navbar-background);
   color: var(--navbar-text-color);
